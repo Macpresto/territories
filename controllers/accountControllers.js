@@ -6,12 +6,15 @@ const login_page = (req,res) =>{
       };
 
 
+//Use axios module to make api call, pass username and password stirng credential as object 
+//start a session and redirect if api returns 200
+//return to login page and display error otherwise
 const account_login = (req, res) => {
     const { username, password } = req.body;
 
     axios.post('https://netzwelt-devtest.azurewebsites.net/Account/SignIn', { username, password })
     .then(response => {
-                console.log(`this is the status ${response.status}`);
+                //console.log(`this is the status ${response.status}`);
                 if(response.status === 200) {
                 console.log('User Logged in');
                 req.session.user = req.body.username;
@@ -22,7 +25,7 @@ const account_login = (req, res) => {
     })
     .catch(err => {
                 console.log(err);
-                res.redirect('/account/login');
+                res.render('login', { title : 'Login', error : 'invalid credentials'});
     });
 };
 
