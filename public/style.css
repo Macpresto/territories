@@ -1,0 +1,32 @@
+ul.nested{
+display: none;
+}
+
+ul.active{
+display: block;
+}
+
+.root::before{
+margin-right: 0.5rem;
+font-size: 0.7rem;
+}
+
+span.caret::before{
+content: "\25B6";
+margin-right: 0.5rem;
+display: inline-block;
+transition: transform 0.3s ease-in-out;
+}
+
+span.caret.active::before{
+transform: rotate(90deg);
+}
+
+.caret{
+cursor: pointer;
+}
+
+#myUL{
+width: 300px;
+}
+
