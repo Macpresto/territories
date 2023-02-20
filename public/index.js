@@ -9,7 +9,9 @@ const parentUl = document.querySelector('#myUL');
 //     data.classList.add("list-group-flush", "mx-auto");
 // });
 
+//function for adding bootstrap classes to html tags
 parentUl.classList.add("list-group-flush", "mx-auto");
+
 
 liGroup.forEach((data) => {
 data.classList.add("list-group-item");
@@ -19,6 +21,7 @@ if (!data.children.length > 0){
 }
 });
 
+//function for toggling dropdown
 toggler.forEach(toggle => {
           toggle.addEventListener('click', () => {
                     //toggle.parentElement.classList.toggle("active");
