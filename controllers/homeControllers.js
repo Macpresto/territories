@@ -16,7 +16,6 @@ return axios.get('https://netzwelt-devtest.azurewebsites.net/Territories/All')
 }
 // Define a recursive function to build a nested HTML list representing a tree
 const buildTree = (data, parentId = null) => {
-        
 const result = [];
 // Filter the data array to find nodes with parent equal to the specified parentId
 for (const node of data.filter(node => node.parent === parentId)) {
